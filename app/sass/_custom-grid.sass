@@ -1,0 +1,52 @@
+/* CSS GRID */
+
+.container
+	width: 1240px
+	padding-left: 20px
+	padding-right: 20px
+	margin-left: auto
+	margin-right: auto
+.ta-right
+	text-align: right
+.center-align
+	text-align: center
+.custom-span1
+	width: 216px
+.custom-span2
+	width: 462px
+.custom-span3
+	width: 708px
+.custom-span4
+	width: 954px
+.custom-span5
+	width: 1200px
+
+.custom-offset1
+	margin-left: 216px
+.custom-offset2
+	margin-left: 462px
+.custom-offset3
+	margin-left: 708px
+.custom-offset4
+	margin-left: 954px
+.custom-offset5
+	margin-left: 1200px
+
+.row
+	padding: 0 
+	margin: 0
+
+.row:after
+	display: block
+	content: '.'
+	height: 0
+	visibility: hidden
+	clear: both
+
+[class*="custom-span"]
+	float: left
+	display: inline
+	margin-right: 30px
+	&:last-child
+		margin-right: 0
+		float: right
