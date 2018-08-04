@@ -3,6 +3,6 @@ TO DO:
 2. some JS refractions?
 
 
-Вопросы к дизайнеру:
+Design:
 1. Is first slider okay?
 2. Style validations on form somehow?
