@@ -58,68 +58,35 @@ $(function() {
 	dot5.onclick = function() {
 		goToSlide(slides.length+4);
 	};
+
+
+
 	
 	// this code seems wierd, but it doing the work
 	// need to refract
-	var card1 = document.getElementById('card1')
-	var hidden1 = document.getElementById('hidden1')
-	var hidePreview1 = document.getElementById('hidePreview1')
-	card1.onmouseover = function() {
-		hidden1.style.display = 'inline-block';
-		hidePreview1.style.display = 'none';
-	};
-	card1.onmouseout = function() {
-		hidden1.style.display = 'none';
-		hidePreview1.style.display = 'inline-block';
+	
+	//var hidden1 = document.getElementById('hidden1')
+	//var hidePreview1 = document.getElementById('hidePreview1')
+
+
+	function showAndHide(card, hidden, hidePreview) {
+		$("#" + card).on("mouseover", function() {
+			$("#" + hidden).css("display", "inline-block")
+			$("#" + hidePreview).css('display', 'none')
+		})
+		$("#" + card).on("mouseout", function() {
+			$("#" + hidden).css("display", "none")
+			$("#" + hidePreview).css('display', 'inline-block')
+		})
 	}
 
-	var card2 = document.getElementById('card2')
-	var hidden2 = document.getElementById('hidden2')
-	var hidePreview2 = document.getElementById('hidePreview2')
-	card2.onmouseover = function() {
-		hidden2.style.display = 'inline-block';
-		hidePreview2.style.display = 'none';
-	};
-	card2.onmouseout = function() {
-		hidden2.style.display = 'none';
-		hidePreview2.style.display = 'inline-block';
+	for (var i = 1; i < 6; i++) {
+		eval("showAndHide('card" + i + "','hidden" + i + "','hidePreview" + i +"')")
 	}
+	//showAndHide(card1, hidden1, hidePreview1)
 
-	var card3 = document.getElementById('card3')
-	var hidden3 = document.getElementById('hidden3')
-	var hidePreview3 = document.getElementById('hidePreview3')
-	card3.onmouseover = function() {
-		hidden3.style.display = 'inline-block';
-		hidePreview3.style.display = 'none';
-	};
-	card3.onmouseout = function() {
-		hidden3.style.display = 'none';
-		hidePreview3.style.display = 'inline-block';
-	}
+	
 
-	var card4 = document.getElementById('card4')
-	var hidden4 = document.getElementById('hidden4')
-	var hidePreview4 = document.getElementById('hidePreview4')
-	card4.onmouseover = function() {
-		hidden4.style.display = 'inline-block';
-		hidePreview4.style.display = 'none';
-	};
-	card4.onmouseout = function() {
-		hidden4.style.display = 'none';
-		hidePreview4.style.display = 'inline-block';
-	}
-
-	var card5 = document.getElementById('card5')
-	var hidden5 = document.getElementById('hidden5')
-	var hidePreview5 = document.getElementById('hidePreview5')
-	card5.onmouseover = function() {
-		hidden5.style.display = 'inline-block';
-		hidePreview5.style.display = 'none';
-	};
-	card5.onmouseout = function() {
-		hidden5.style.display = 'none';
-		hidePreview5.style.display = 'inline-block';
-	}
 
 
 	// CAROUSELS
