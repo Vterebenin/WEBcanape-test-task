@@ -1,11 +1,8 @@
 TO DO:
-
-1. separate carousel
-2. refractor slider
-3. top icons trouble(probably svg)
-4. last 2 sections
+1. top icons trouble(svg?)
+2. some JS refractions?
 
 
 Вопросы к дизайнеру:
-1. Каким он видит первый слайдер? Какие конкретно картинки участвуют(слои фотошопа не подписаны)
-2. Нужно ли стилизировать неправильные валидации? 
+1. Is first slider okay?
+2. Style validations on form somehow?
