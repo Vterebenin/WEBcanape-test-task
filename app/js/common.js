@@ -2,21 +2,45 @@ $(function() {
 
 	var slides = document.querySelectorAll('#slides .slide');
 	var currentSlide = 0;
+	var slideInterval = setInterval(nextSlide, 5000)
 	var dots = document.querySelectorAll('#dots .control-dots');
 	var currentDot = 0;
+	var playing = true
+	// probably refract? idk how now
 	var dot1 = document.getElementById('dot1');
 	var dot2 = document.getElementById('dot2');
 	var dot3 = document.getElementById('dot3');
 	var dot4 = document.getElementById('dot4');
 	var dot5 = document.getElementById('dot5');
+	function nextSlide() {
+		slides[currentSlide].className = 'slide';
+		dots[currentDot].className = 'control-dots'
+		currentSlide = (currentSlide+1)%slides.length;
+		currentDot = (1+currentDot)%dots.length;
+		slides[currentSlide].className = 'slide showing';
+		dots[currentDot].className = 'control-dots activeDot';
 
+	}
+	function pauseSlideshow() {
+		playing = false;
+		clearInterval(slideInterval);
+	}
+
+	function playSlideshow() {
+		playing = true;
+
+		slideInterval = setInterval(nextSlide,5000)
+	}
 	function goToSlide(n) {
+		pauseSlideshow();
 		slides[currentSlide].className = 'slide';
 		dots[currentDot].className = 'control-dots'
 		currentSlide = (n+slides.length)%slides.length;
 		currentDot = (n+dots.length)%dots.length;//document.getElementById("dot" + (n - slides.length + 1));
-		dots[currentDot].className = 'control-dots activeDot';
+		
 		slides[currentSlide].className = 'slide showing';
+		dots[currentDot].className = 'control-dots activeDot';
+		playSlideshow();
 	}
 
 	dot1.onclick = function() {
@@ -35,18 +59,34 @@ $(function() {
 		goToSlide(slides.length+4);
 	};
 
-	var card1 = document.getElementById('card1')
-	var hidden1 = document.getElementById('hidden1')
-	var hidePreview1 = document.getElementById('hidePreview1')
-	card1.onmouseover = function() {
-		hidden1.style.display = 'inline-block';
-		hidePreview1.style.display = 'none';
-	};
-	card1.onmouseout = function() {
-		hidden1.style.display = 'none';
-		hidePreview1.style.display = 'inline-block';
+	/*var cards = $('.cards-wrapper')
+	var cardsCount = cards.find('.card-item').length;
+	var cardsList = []
+	var hiddenList = []
+	var hidePreviewList = []
+	var obj = {}
+	console.log(cardsCount)
+	for (var i = 1; i < 6; i++) {
+		var card_number = "card" + i
+		var hidden_number = "hidden" + i
+		var hidePreviewList = "hidePreview" + i 
+		cardsList[i] = document.getElementById('card1')
+		hiddenList[i] = document.getElementById('hidden1')
+		hidePreviewList[i] = document.getElementById('hidePreview1')
+		cardsList[i].onmouseover = function() {
+			hiddenList[i].style.display = 'inline-block';
+			hidePreviewList[i].style.display = 'none';
+		};
+		cardsList[i].onmouseout = function() {
+			hiddenList[i].style.display = 'none';
+			hidePreviewList[i].style.display = 'inline-block';
+		}
 	}
+*/
 
+	
+	// this code seems wierd, but it doing the work
+	// need to refract
 	var card1 = document.getElementById('card1')
 	var hidden1 = document.getElementById('hidden1')
 	var hidePreview1 = document.getElementById('hidePreview1')
@@ -108,29 +148,61 @@ $(function() {
 	}
 
 
+	// CAROUSELS
+	/*
+	they can be refractored, for now doesnt now how
+	working on it
+	*/
 	var leftUIEl = $('.carousel-arrow-left');
 	var rightUIEl = $('.carousel-arrow-right');
-	var elementsList = $('.carousel-list');
+	var elementsList = $('#carousel-list-1');
+	var elementsList2 = $('#carousel-list-2')
 
 	var pixelsOffset = 210;
+	var pixelsOffsetPort = 190;
 	var currentLeftValue = 0;
+	var currentLeftValuePort = 0;
 	var elementsCount = elementsList.find('li').length;
-	var minimumOffset = - ((elementsCount - 11) * pixelsOffset);
+	var minimumOffset = -1050;
+	var minimumOffsetPort = -760;
 	var maximumOffset = 0;
 
 	leftUIEl.click(function() {
-		if (currentLeftValue != maximumOffset) {
-			currentLeftValue += 210;
-			elementsList.animate({ left : currentLeftValue + "px"}, 500);
-		}   
+		if (this.id === 'arrow-port1') {
+			console.log('test2')
+			if (currentLeftValuePort != maximumOffset) {
+				console.log(minimumOffsetPort)
+
+				currentLeftValuePort += pixelsOffsetPort;
+				elementsList2.animate({ left : currentLeftValuePort + "px"}, 500);
+			}
+
+		} else {
+			console.log('test')
+			if (currentLeftValue != maximumOffset) {
+				currentLeftValue += pixelsOffset;
+				elementsList.animate({ left : currentLeftValue + "px"}, 500);
+			}   
+		}
+		
 	});
 
-	rightUIEl.click(function() {        
-		if (currentLeftValue != minimumOffset) {
-			currentLeftValue -= 210;
-			elementsList.animate({ left : currentLeftValue + "px"}, 500);
-		}        
-	});
+	rightUIEl.click(function() {
+		if (this.id === 'arrow-port2') {
+			console.log('test2')
+			if (currentLeftValuePort != minimumOffsetPort) {
+				currentLeftValuePort -= pixelsOffsetPort;
+				elementsList2.animate({ left : currentLeftValuePort + "px"}, 500);
+			} 
 
+		} else {
+			console.log('test3')
+			if (currentLeftValue != minimumOffset) {
+				currentLeftValue -= pixelsOffset;
+				elementsList.animate({ left : currentLeftValue + "px"}, 500);
+			}   
+		}
+		
+	});
 
 });
