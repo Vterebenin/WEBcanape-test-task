@@ -58,32 +58,6 @@ $(function() {
 	dot5.onclick = function() {
 		goToSlide(slides.length+4);
 	};
-
-	/*var cards = $('.cards-wrapper')
-	var cardsCount = cards.find('.card-item').length;
-	var cardsList = []
-	var hiddenList = []
-	var hidePreviewList = []
-	var obj = {}
-	console.log(cardsCount)
-	for (var i = 1; i < 6; i++) {
-		var card_number = "card" + i
-		var hidden_number = "hidden" + i
-		var hidePreviewList = "hidePreview" + i 
-		cardsList[i] = document.getElementById('card1')
-		hiddenList[i] = document.getElementById('hidden1')
-		hidePreviewList[i] = document.getElementById('hidePreview1')
-		cardsList[i].onmouseover = function() {
-			hiddenList[i].style.display = 'inline-block';
-			hidePreviewList[i].style.display = 'none';
-		};
-		cardsList[i].onmouseout = function() {
-			hiddenList[i].style.display = 'none';
-			hidePreviewList[i].style.display = 'inline-block';
-		}
-	}
-*/
-
 	
 	// this code seems wierd, but it doing the work
 	// need to refract
@@ -150,8 +124,9 @@ $(function() {
 
 	// CAROUSELS
 	/*
-	they can be refractored, for now doesnt now how
-	working on it
+	they can be refractored, 
+	for now doesnt now how
+	testing it
 	*/
 	var leftUIEl = $('.carousel-arrow-left');
 	var rightUIEl = $('.carousel-arrow-right');
@@ -169,16 +144,14 @@ $(function() {
 
 	leftUIEl.click(function() {
 		if (this.id === 'arrow-port1') {
-			console.log('test2')
 			if (currentLeftValuePort != maximumOffset) {
-				console.log(minimumOffsetPort)
+
 
 				currentLeftValuePort += pixelsOffsetPort;
 				elementsList2.animate({ left : currentLeftValuePort + "px"}, 500);
 			}
 
 		} else {
-			console.log('test')
 			if (currentLeftValue != maximumOffset) {
 				currentLeftValue += pixelsOffset;
 				elementsList.animate({ left : currentLeftValue + "px"}, 500);
@@ -189,14 +162,12 @@ $(function() {
 
 	rightUIEl.click(function() {
 		if (this.id === 'arrow-port2') {
-			console.log('test2')
 			if (currentLeftValuePort != minimumOffsetPort) {
 				currentLeftValuePort -= pixelsOffsetPort;
 				elementsList2.animate({ left : currentLeftValuePort + "px"}, 500);
 			} 
 
 		} else {
-			console.log('test3')
 			if (currentLeftValue != minimumOffset) {
 				currentLeftValue -= pixelsOffset;
 				elementsList.animate({ left : currentLeftValue + "px"}, 500);
