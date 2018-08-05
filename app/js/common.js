@@ -7,13 +7,16 @@ $(function() {
 	var playing = true
 	// probably refract? idk how now
 	// probably some fixes in future
-	function nextSlide() {
+	function changeSlideAndDot(changeLength) {
 		slides[currentSlide].className = 'slide';
 		dots[currentDot].className = 'control-dots'
-		currentSlide = (currentSlide+1)%slides.length;
-		currentDot = (1+currentDot)%dots.length;
+		currentSlide = (changeLength)%slides.length;
+		currentDot = (changeLength)%dots.length;
 		slides[currentSlide].className = 'slide showing';
 		dots[currentDot].className = 'control-dots activeDot';
+	}
+	function nextSlide() {
+		changeSlideAndDot(currentSlide+1);
 	}
 	function pauseSlideshow() {
 		playing = false;
@@ -25,12 +28,7 @@ $(function() {
 	}
 	function goToSlide(n) {
 		pauseSlideshow();
-		slides[currentSlide].className = 'slide';
-		dots[currentDot].className = 'control-dots'
-		currentSlide = (n+slides.length)%slides.length;
-		currentDot = (n+dots.length)%dots.length;
-		slides[currentSlide].className = 'slide showing';
-		dots[currentDot].className = 'control-dots activeDot';
+		changeSlideAndDot(n+slides.length);
 		playSlideshow();
 	}
 	dot1.onclick = function() {
@@ -49,8 +47,6 @@ $(function() {
 		goToSlide(slides.length+4);
 	};
 	
-	// this code seems wierd, but it doing the work
-	// need to refract
 	function showAndHide(card, hidden, hidePreview) {
 		$("#" + card).on("mouseover", function() {
 			$("#" + hidden).css("display", "inline-block")

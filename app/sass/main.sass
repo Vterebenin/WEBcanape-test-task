@@ -121,14 +121,14 @@ body
 	font-size: 13px
 	font-family: $roboto-bold
 	text-transform: uppercase
-	background-color: #ce4180
-	color: #fff
+	background-color: $accent
+	color: white
 	border: none
 	border-radius: 8px
 
 .wrapper-line-lvl-3
-	border-top: 1px solid #eaeaea
-	border-bottom: 1px solid #eaeaea
+	border-top: 1px solid $custom-gray
+	border-bottom: 1px solid $custom-gray
 .lvl3-header
 	padding: 15px 0
 	text-align: center
@@ -143,7 +143,7 @@ body
 			display: inline-block
 			margin-right: 60px
 			a
-				color: #545455
+				color: $darker-gray
 
 				text-decoration: none
 				&:hover
@@ -153,7 +153,7 @@ body
 		margin: 10px			
 .slider-wrapper
 
-	background-color: #f3f3f3
+	background-color: #fbfbfb
 #slides
 	position: relative
 	height: 560px
@@ -188,7 +188,7 @@ body
 	font-size: 40px
 	box-sizing: border-box
 	background: #333
-	color: #fff
+	color: white
 
 .slider
 	#dots 
@@ -202,16 +202,16 @@ body
 	.control-dots
 		width: 10px
 		height: 10px
-		background-color: #fff
-		border: 2px solid #e6e6e6
+		background-color: white
+		border: 2px solid $custom-gray
 		border-radius: 50%
 		display: inline-block
 
 	.activeDot
-		background-color: #cd3378
-		border: #cd3378
+		background-color: $accent
+		border: $accent
 
-.header-slider-text-block, .header-slider-text-block1
+.header-slider-text-block1
 	background-color: #fafafa
 	width: 750px
 	height: 175px
@@ -245,7 +245,7 @@ body
 	z-index: 5
 	padding-top: 60px
 	margin-bottom: 125px
-	color: #fff
+	color: white
 
 .item
 	display: inline-block
@@ -274,7 +274,7 @@ body
 		border-radius: 10px
 	.gradient-text
 		text-transform: uppercase
-		color: #fff
+		color: white
 		font-family: $exo2-bold
 		font-size: 18px
 		z-index: 30
@@ -290,13 +290,13 @@ body
 			top: 50px
 			width: 130px
 			height: 3px
-			background: #fff
+			background: white
 
 // SECTION CARDS
 .cards
 	.custom-span1
 		height: 380px
-		background: #f4f4f4
+		background: $custom-gray
 		text-align: center
 		display: inline-block
 		img
@@ -326,7 +326,7 @@ body
 	z-index: 40
 	background: rgba(0,0,0,0.5)
 	text-align: center
-	color: #fff
+	color: white
 	font-size: 16px
 	.description
 		margin: 30px 20px
@@ -366,7 +366,7 @@ body
 					height: 0
 
 .light-border-bottom
-	border-bottom: 1px solid #eaeaea
+	border-bottom: 1px solid $custom-gray
 // SECTION TEXT
 .text-section
 	padding-bottom: 80px
@@ -374,7 +374,7 @@ body
 		width: 1040px
 		padding-left: 30px
 		font-size: 40px
-		color: #545455
+		color: $darker-gray
 		font-family: $exo2-regular
 		border-left: 3px solid #d1528b
 		margin-bottom: 30px
@@ -412,13 +412,13 @@ body
 					top: -20px
 					width: 40px
 					height: 3px
-					background: #d1528b
+					background: $accent
 
 
 .section-header
 	font-size: 26px
 	font-family: $exo2-regular
-	color: #646465
+	color: $darker-gray
 	margin-bottom: 60px
 	
 // SECTION FEEDBACK
@@ -440,7 +440,7 @@ body
 		float: left
 		width: 250px
 		height: 350px
-		background-color: #f4f4f4
+		background-color: $custom-gray
 
 
 .carousel-arrow-left, .carousel-arrow-right
@@ -451,7 +451,7 @@ body
 	color: #999
 	&:hover
 		cursor: pointer
-		color: #d1528b
+		color: $accent
 	i
 		font-size: 60px
 .carousel-arrow-left
@@ -468,7 +468,7 @@ body
 	padding: 24px 
 	padding-bottom: 0
 	font-size: 14px
-	color: #acacac
+	color: $another-gray
 
 .feedback-author
 	font-family: $roboto-bold
@@ -494,7 +494,7 @@ body
 
 //SECTION PORTFOLIO
 .carousel-portfolio
-	.carousel-element //210*150
+	.carousel-element 
 		width: 210px
 		height: 150px
 		img
@@ -517,7 +517,7 @@ body
 		text-transform: uppercase
 		font-family: $exo2-bold
 		font-size: 25px
-		color: #fff
+		color: white
 	.input-row
 		textarea, .inputs
 			display: block
@@ -536,20 +536,20 @@ body
 			margin-right: 15px
 			border-radius: 5px
 			&::-webkit-input-placeholder
-				color: #999
+				color: $another-gray
 			&:last-child
 				margin-right: 0
 		textarea, input
 			border: none
 			border-radius: 5px
 			padding: 10px
-			color: #999
+			color: $another-gray
 
 // FOOTER
 footer
 	padding-bottom: 40px
 	margin-top: 40px
-	color: #999
+	color: $another-gray
 	.footer-right
 		float: right
 		text-align: right
