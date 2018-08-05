@@ -245,8 +245,10 @@ body
 	width: 380px
 	height: 200px
 	position: relative
-	padding-right: 30px
+	margin-right: 20px
 	text-align: right
+	&:last-child
+		margin-right: 0
 	.img-wrapper
 		position: absolute
 		top: 0
@@ -300,7 +302,7 @@ body
 			position: relative
 			text-transform: uppercase
 			width: 210px
-			&:after
+			&:before
 				content: ''
 				position: absolute
 				left: -3px
