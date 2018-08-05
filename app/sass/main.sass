@@ -142,6 +142,20 @@ body
 		li
 			display: inline-block
 			margin-right: 60px
+			&:hover
+				.some-bg-img
+					background-position: 0% 0%
+
+			.some-bg-img
+
+				display: inline-block
+				position: relative
+				top: 10px
+				left: -10px
+				width: 36px
+				height: 30px
+				background-position: 0 100%
+				background-repeat: no-repeat
 			a
 				color: $darker-gray
 
@@ -468,7 +482,7 @@ body
 	padding: 24px 
 	padding-bottom: 0
 	font-size: 14px
-	color: $another-gray
+	color: #acacac
 
 .feedback-author
 	font-family: $roboto-bold
@@ -536,20 +550,20 @@ body
 			margin-right: 15px
 			border-radius: 5px
 			&::-webkit-input-placeholder
-				color: $another-gray
+				color: #acacac
 			&:last-child
 				margin-right: 0
 		textarea, input
 			border: none
 			border-radius: 5px
 			padding: 10px
-			color: $another-gray
+			color: #acacac
 
 // FOOTER
 footer
 	padding-bottom: 40px
 	margin-top: 40px
-	color: $another-gray
+	color: #acacac
 	.footer-right
 		float: right
 		text-align: right
